@@ -15,15 +15,15 @@ const MainBanner = () => {
         />
       </div>
       <div className="relative h-[75vh] md:h-[70vh]">
-        <h1 className="text-5xl md:text-5xl lg:text-6xl text-slate-700 text-left ml-[6%] mr-[4%] lg:mr-[50%] pt-[6%] font-bold">
+        <h1 className="text-5xl md:text-5xl lg:text-6xl text-slate-700 text-left ml-[6%] mr-[4%] lg:mr-[52%] pt-[6%] font-bold">
           Откройте для себя свою истинную красоту
         </h1>
-        <h1 className="text-lg md:text-xl lg:text-xl text-slate-700 text-left ml-[6%] mr-[4%] md:mr-[55%] pt-[5%] lg:pt-20">
+        <h1 className="text-lg md:text-xl lg:text-xl text-slate-700 text-left ml-[6%] mr-[4%] md:mr-[55%] pt-[5%]">
           Ознакомьтесь с ассортиментом процедур премиум-класса в клинике
           SarBona, разработанных специально для усиления вашего естественного
           очарования. Примите себя новой.
         </h1>
-        <div className="sm:ml-[6%] mt-[5%] lg:mt-[50px] md:mr-[50%] flex flex-col items-center sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+        <div className="sm:ml-[6%] mt-[5%] lg:mt-[50px] md:mr-[30%] flex flex-col items-center sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
           <Link
             href="#appointment"
             className="px-6 py-6 bg-light-golden text-white rounded hover:bg-dark-golden transition duration-300"
