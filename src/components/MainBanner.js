@@ -11,6 +11,7 @@ const MainBanner = () => {
           loop
           muted
           disablePictureInPicture
+					playsInline
           className="absolute top-0 right-0 lg:w-1/2 h-full object-cover"
         />
       </div>
