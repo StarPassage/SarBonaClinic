@@ -62,7 +62,7 @@ const Header = () => {
           />
         </Link>
 
-        {/* Appointment button for mobile, centered */}
+        {/* Appointment button for mobile */}
         <div className="lg:hidden flex flex-grow justify-center mr-5">
           <Link
             href="#appointment"
