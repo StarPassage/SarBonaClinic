@@ -56,6 +56,7 @@ const HeaderMenu = ({ menuContent, isMenuOpen, onMenuHover }) => {
                 <a
                   href={`#${service}`}
                   className="rounded-lg hover:bg-gray-200 py-6 pl-3"
+                  key={service}
                 >
                   {service}
                 </a>
