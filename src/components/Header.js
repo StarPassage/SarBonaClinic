@@ -52,7 +52,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-[30px] bg-white text-black md:py-4 z-[99]">
+    <header className="sticky top-[25px] bg-white text-black md:py-4 z-[99]">
       <div className="container mx-auto flex flex-wrap justify-between items-center p-4 md:p-0">
         <Link href="/">
           <img
