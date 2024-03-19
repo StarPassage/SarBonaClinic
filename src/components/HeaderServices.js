@@ -51,15 +51,11 @@ const HeaderServices = () => {
       </a>
 
       <div
-        className={`absolute transition-all duration-300 ease-in-out transform ${
+        className={`origin-top-right absolute right-0 w-screen md:max-w-md transition ease-out duration-300 ${
           isMenuOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-5 hidden"
-        } shadow-lg rounded-lg`}
-        style={{
-          width: "600px",
-          transform: "translateX(-10%)",
-        }}
+            ? "opacity-100 scale-100 pointer-events-auto"
+            : "opacity-0 scale-95 pointer-events-none"
+        }`}
         onMouseLeave={() => handleMenuToggle(false)}
       >
         <div className="flex rounded-lg overflow-hidden w-full">
