@@ -58,10 +58,10 @@ const HotDeals = () => {
                   className="w-full h-auto rounded-2xl"
                 />
                 <div className="absolute top-0 left-0 w-full">
-                  <p className=" text-slate-700 text-lg md:text-5xl mx-[5%] mt-[5%] font-bold">
+                  <p className=" text-white text-lg md:text-5xl mx-[5%] mt-[5%] font-bold">
                     Бесплатная консультация врача-косметолога в Саратове
                   </p>
-                  <p className="text-slate-700 text-sm md:text-3xl mx-[5%] mt-[2%]">
+                  <p className="text-white text-sm md:text-3xl mx-[5%] mt-[2%]">
                     Консультация бесплатна при проведении косметологических
                     процедур в день приема
                   </p>

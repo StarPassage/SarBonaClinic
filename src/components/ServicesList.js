@@ -15,14 +15,14 @@ const ServicesList = () => {
             unoptimized
             width={0}
             height={0}
-            className="w-[100%] h-[100%]"
+            className="w-[100%] h-[100%] rounded-2xl"
           />
           <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
-            Уход за лицом
+            Косметология
           </h1>
           <h1 className="text-base md:text-lg xl:text-xl text-slate-700 mt-5 break-words">
-            Оживите свою кожу с помощью наших омолаживающих процедур для лица,
-            разработанных специально для вашей кожи.
+            Оживите свою кожу с помощью наших омолаживающих косметологических
+            процедур, разработанных специально для вашей кожи.
           </h1>
         </div>
         <div className="w-[46%] h-[50%]">
@@ -31,7 +31,7 @@ const ServicesList = () => {
             unoptimized
             width={0}
             height={0}
-            className="w-[100%] h-[100%]"
+            className="w-[100%] h-[100%] rounded-2xl"
           />
           <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
             Маникюр и педикюр
@@ -47,7 +47,7 @@ const ServicesList = () => {
             unoptimized
             width={0}
             height={0}
-            className="w-[100%] h-[100%]"
+            className="w-[100%] h-[100%] rounded-2xl"
           />
           <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
             Парикмахерские услуги
@@ -63,7 +63,7 @@ const ServicesList = () => {
             unoptimized
             width={0}
             height={0}
-            className="w-[100%] h-[100%]"
+            className="w-[100%] h-[100%] rounded-2xl"
           />
           <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
             Массажи
@@ -71,6 +71,37 @@ const ServicesList = () => {
           <h1 className="text-base md:text-lg xl:text-xl text-slate-700 mt-5 break-words">
             Расслабьтесь с помощью нашего успокаивающего массажа, чтобы снять
             стресс и напряжение.
+          </h1>
+        </div>
+        <div className="w-[46%] h-[50%]">
+          <Image
+            src="https://source.unsplash.com/random/900x900/?therapy"
+            unoptimized
+            width={0}
+            height={0}
+            className="w-[100%] h-[100%] rounded-2xl"
+          />
+          <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
+            Терапия
+          </h1>
+          <h1 className="text-base md:text-lg xl:text-xl text-slate-700 mt-5 break-words">
+            Консультативный прием врача-терапевта с многолетним опытом работы.
+          </h1>
+        </div>
+        <div className="w-[46%] h-[50%]">
+          <Image
+            src="https://source.unsplash.com/random/900x900/?feet+pedicure"
+            unoptimized
+            width={0}
+            height={0}
+            className="w-[100%] h-[100%] rounded-2xl"
+          />
+          <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
+            Подология
+          </h1>
+          <h1 className="text-base md:text-lg xl:text-xl text-slate-700 mt-5 break-words">
+            Лечение ногтевой пластины и стопы от различных заболеваний и
+            повреждений.
           </h1>
         </div>
         <Separator />
