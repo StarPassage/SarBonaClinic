@@ -17,10 +17,10 @@ const ServicesList = () => {
             height={0}
             className="w-[100%] h-[100%]"
           />
-          <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5">
+          <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
             Уход за лицом
           </h1>
-          <h1 className="text-base md:text-lg xl:text-xl text-slate-700 mt-5">
+          <h1 className="text-base md:text-lg xl:text-xl text-slate-700 mt-5 break-words">
             Оживите свою кожу с помощью наших омолаживающих процедур для лица,
             разработанных специально для вашей кожи.
           </h1>
@@ -33,10 +33,10 @@ const ServicesList = () => {
             height={0}
             className="w-[100%] h-[100%]"
           />
-          <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5">
+          <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
             Маникюр и педикюр
           </h1>
-          <h1 className="text-base md:text-lg xl:text-xl text-slate-700 mt-5">
+          <h1 className="text-base md:text-lg xl:text-xl text-slate-700 mt-5 break-words">
             Побалуйте себя нашими профессиональными услугами по уходу за ногтями
             рук и ног.
           </h1>
@@ -49,10 +49,10 @@ const ServicesList = () => {
             height={0}
             className="w-[100%] h-[100%]"
           />
-          <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5">
+          <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
             Парикмахерские услуги
           </h1>
-          <h1 className="text-base md:text-lg xl:text-xl text-slate-700 mt-5">
+          <h1 className="text-base md:text-lg xl:text-xl text-slate-700 mt-5 break-words">
             Преобразите свой образ с помощью наших квалифицированных услуг по
             укладке волос для любого случая.
           </h1>
@@ -65,10 +65,10 @@ const ServicesList = () => {
             height={0}
             className="w-[100%] h-[100%]"
           />
-          <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5">
+          <h1 className="text-2xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
             Массажи
           </h1>
-          <h1 className="text-base md:text-lg xl:text-xl text-slate-700 mt-5">
+          <h1 className="text-base md:text-lg xl:text-xl text-slate-700 mt-5 break-words">
             Расслабьтесь с помощью нашего успокаивающего массажа, чтобы снять
             стресс и напряжение.
           </h1>
