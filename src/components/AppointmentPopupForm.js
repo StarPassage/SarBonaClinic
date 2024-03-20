@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -49,6 +49,7 @@ const AppointmentPopupForm = () => {
   });
 
   const watchedPhoneNumber = watch("phoneNumber");
+  const formRef = useRef(null);
 
   useEffect(() => {
     // Fetch country codes from your JSON file
@@ -97,13 +98,23 @@ const AppointmentPopupForm = () => {
     }
   };
 
+  const handleOverlayClick = (event) => {
+    if (formRef.current && !formRef.current.contains(event.target)) {
+      closePopup();
+    }
+  };
+
   return (
     <div
       className={`fixed end-0 top-0 bg-gray-600 bg-opacity-50 p-4 overflow-y-auto h-full w-full flex justify-center items-center transition-opacity duration-300 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
+      onClick={handleOverlayClick}
     >
-      <div className="bg-extra-light-golden p-8 rounded-lg shadow-lg relative">
+      <div
+        ref={formRef}
+        className="bg-extra-light-golden p-8 rounded-lg shadow-lg relative"
+      >
         <button
           onClick={closePopup}
           type="button"

@@ -66,12 +66,12 @@ const Header = () => {
 
         {/* Appointment button for mobile */}
         <div className="lg:hidden flex flex-grow justify-center mr-5">
-          <Link
-            href="#appointment"
+          <button
+            onClick={openPopup}
             className="px-4 py-4 bg-light-golden text-white rounded hover:bg-dark-golden transition duration-300"
           >
             Записаться на сеанс
-          </Link>
+          </button>
         </div>
 
         {/* Hamburger menu button */}

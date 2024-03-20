@@ -28,7 +28,7 @@ const HotDeals = () => {
             <CarouselItem>
               <div className="relative">
                 <Image
-                  src="https://source.unsplash.com/random/1200x600/?body+massage"
+                  src="https://source.unsplash.com/random/1200x600/?autumn+beauty"
                   unoptimized
                   width={0}
                   height={0}
