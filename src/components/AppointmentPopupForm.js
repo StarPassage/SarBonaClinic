@@ -29,8 +29,10 @@ const AppointmentPopupForm = () => {
   useEffect(() => {
     setIsVisible(isPopupOpen);
   }, [isPopupOpen]);
+
   const [countryCodes, setCountryCodes] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedCountry, setSelectedCountry] = useState({
     dial_code: "+7",
     code: "RU",
@@ -50,6 +52,8 @@ const AppointmentPopupForm = () => {
 
   const watchedPhoneNumber = watch("phoneNumber");
   const formRef = useRef(null);
+  const dropdownRef = useRef(null);
+  const dropdownButtonRef = useRef(null);
 
   useEffect(() => {
     // Fetch country codes from your JSON file
@@ -98,22 +102,55 @@ const AppointmentPopupForm = () => {
     }
   };
 
-  const handleOverlayClick = (event) => {
-    if (formRef.current && !formRef.current.contains(event.target)) {
-      closePopup();
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      const isDropdownButtonClicked = dropdownButtonRef.current.contains(
+        event.target
+      );
+      const isOutsideDropdown =
+        dropdownRef.current && !dropdownRef.current.contains(event.target);
+      const isOutsideForm =
+        formRef.current && !formRef.current.contains(event.target);
+
+      if (isOutsideDropdown && !isDropdownButtonClicked) {
+        setIsDropdownOpen(false);
+        if (isOutsideForm) {
+          closePopup();
+        }
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [closePopup, setIsDropdownOpen]);
+
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+    const selectedCountryElement =
+      dropdownRef.current.querySelector(".selected");
+    if (selectedCountryElement) {
+      selectedCountryElement.scrollIntoView({
+        block: "start",
+        inline: "nearest",
+      });
     }
   };
+
+  const filteredCountries = countryCodes.filter((country) =>
+    country.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div
       className={`fixed end-0 top-0 bg-gray-600 bg-opacity-50 p-4 overflow-y-auto h-full w-full flex justify-center items-center transition-opacity duration-300 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
-      onClick={handleOverlayClick}
     >
       <div
         ref={formRef}
-        className="bg-extra-light-golden p-8 rounded-lg shadow-lg relative"
+        className="bg-gradient-to-b from-extra-light-golden to-xs-light-golden  p-8 rounded-lg shadow-lg relative"
       >
         <button
           onClick={closePopup}
@@ -166,7 +203,8 @@ const AppointmentPopupForm = () => {
                 key={selectedCountry.code}
                 type="button"
                 className="flex items-center"
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                ref={dropdownButtonRef}
+                onClick={handleDropdownToggle}
               >
                 <img
                   src={`https://flagsapi.com/${selectedCountry.code}/flat/32.png`}
@@ -208,27 +246,62 @@ const AppointmentPopupForm = () => {
             </div>
             <p className="text-red-600">{errors.phoneNumber?.message}</p>
             <div
-              className={`absolute w-full mt-1 border border-gray-300 rounded-xl bg-white z-10 max-h-60 overflow-y-auto transition ease-out duration-100 ${
+              ref={dropdownRef}
+              className={`absolute w-[80%] mt-1 border border-gray-300 bg-white z-10 max-h-60 overflow-y-auto transition ease-out duration-100 ${
                 isDropdownOpen
                   ? "opacity-100 scale-100 pointer-events-auto"
                   : "opacity-0 scale-60 pointer-events-none"
               }`}
             >
-              {countryCodes.map((country, index) => (
-                <div
-                  key={index}
-                  className="flex items-center p-4 hover:bg-gray-100 cursor-pointer"
-                  onClick={() => selectCountry(country)}
-                >
-                  <img
-                    src={`https://flagsapi.com/${country.code}/flat/32.png`}
-                    alt={country.name}
-                    className="mr-2"
-                  />
-                  <span className="mr-2">{country.name}</span>
-                  <span>{country.dial_code}</span>
-                </div>
-              ))}
+              <div className="flex items-center border-b border-gray-300">
+                <img
+                  src="/magnifier.svg"
+                  alt="Search Icon"
+                  className="h-4 w-4 ml-4 mr-2 text-gray-400"
+                />
+                <input
+                  type="text"
+                  placeholder="Поиск..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="p-2 w-full  focus:outline-none"
+                />
+              </div>
+              <div className="overflow-auto max-h-48">
+                {filteredCountries.map((country, index) => (
+                  <div
+                    key={index}
+                    className={`flex items-center p-4 hover:bg-gray-100 cursor-pointer ${
+                      selectedCountry.code === country.code ? "selected" : ""
+                    }`}
+                    onClick={() => selectCountry(country)}
+                  >
+                    <img
+                      src={`https://flagsapi.com/${country.code}/flat/32.png`}
+                      alt={country.name}
+                      className="mr-2"
+                    />
+                    <span className="mr-2 overflow-hidden whitespace-nowrap overflow-ellipsis">
+                      {country.name}
+                    </span>
+                    <span className="mr-2">({country.dial_code})</span>
+                    {selectedCountry.code === country.code && (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 ml-auto text-black"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M17.707 3.293a1 1 0 0 1 0 1.414l-10 10a1 1 0 0 1-1.414 0l-5-5a1 1 0 1 1 1.414-1.414L7 12.586l9.293-9.293a1 1 0 0 1 1.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
