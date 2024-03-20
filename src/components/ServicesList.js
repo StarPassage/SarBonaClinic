@@ -14,7 +14,7 @@ const ServicesList = () => {
             src="/cosmetology-service.jpg"
             width={1000}
             height={1000}
-            className="md:w-[100%] md:h-[100%] rounded-2xl"
+            className="md:w-full md:h-full rounded-2xl"
           />
           <h1 className="text-3xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
             Косметология
@@ -29,7 +29,7 @@ const ServicesList = () => {
             src="/nails.jpg"
             width={1000}
             height={1000}
-            className="md:w-[100%] md:h-[100%] rounded-2xl"
+            className="md:w-full md:h-full rounded-2xl"
           />
           <h1 className="text-3xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
             Маникюр и педикюр
@@ -44,7 +44,7 @@ const ServicesList = () => {
             src="/hair.jpg"
             width={1000}
             height={1000}
-            className="md:w-[100%] md:h-[100%] rounded-2xl"
+            className="md:w-full md:h-full rounded-2xl"
           />
           <h1 className="text-3xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
             Парикмахерские услуги
@@ -59,7 +59,7 @@ const ServicesList = () => {
             src="/beauty-spa.jpg"
             width={1000}
             height={1000}
-            className="md:w-[100%] md:h-[100%] rounded-2xl"
+            className="md:w-full md:h-full rounded-2xl"
           />
           <h1 className="text-3xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
             Массажи
@@ -74,7 +74,7 @@ const ServicesList = () => {
             src="/therapist.jpg"
             width={1000}
             height={1000}
-            className="md:w-[100%] md:h-[100%] rounded-2xl"
+            className="md:w-full md:h-full rounded-2xl"
           />
           <h1 className="text-3xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
             Терапия
@@ -88,7 +88,7 @@ const ServicesList = () => {
             src="/podology.jpg"
             width={1000}
             height={1000}
-            className="md:w-[100%] md:h-[100%] rounded-2xl"
+            className="md:w-full md:h-full rounded-2xl"
           />
           <h1 className="text-3xl md:text-4xl xl:text-5xl text-slate-700 mt-5 break-words">
             Подология

@@ -54,6 +54,9 @@ const AppointmentPopupForm = () => {
   const formRef = useRef(null);
   const dropdownRef = useRef(null);
   const dropdownButtonRef = useRef(null);
+  const sortedCountryCodes = [...countryCodes].sort(
+    (a, b) => b.dial_code.length - a.dial_code.length
+  );
 
   useEffect(() => {
     // Fetch country codes from your JSON file
@@ -64,17 +67,15 @@ const AppointmentPopupForm = () => {
   }, []);
 
   useEffect(() => {
-    if (!isDropdownOpen) {
-      const extractCountryCode = (phoneNumber) => {
-        return countryCodes.find((country) =>
-          phoneNumber.startsWith(country.dial_code)
-        );
-      };
+    const extractCountryCode = (phoneNumber) => {
+      return sortedCountryCodes.find((country) =>
+        phoneNumber.startsWith(country.dial_code)
+      );
+    };
 
-      const matchedCountry = extractCountryCode(watchedPhoneNumber);
-      if (matchedCountry) {
-        setSelectedCountry(matchedCountry);
-      }
+    const matchedCountry = extractCountryCode(watchedPhoneNumber);
+    if (matchedCountry) {
+      setSelectedCountry(matchedCountry);
     }
   }, [watchedPhoneNumber, countryCodes, isDropdownOpen]);
 

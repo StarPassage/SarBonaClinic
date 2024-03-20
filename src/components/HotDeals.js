@@ -32,7 +32,7 @@ const HotDeals = () => {
                   unoptimized
                   width={0}
                   height={0}
-                  className="w-full h-auto rounded-2xl"
+                  className="w-full h-full rounded-2xl"
                 />
                 <div className="absolute top-0 left-0 w-full">
                   <p className=" text-white text-xl md:text-5xl mx-[5%] mt-[5%] font-bold">
@@ -53,11 +53,10 @@ const HotDeals = () => {
             <CarouselItem>
               <div className="relative">
                 <Image
-                  src="https://source.unsplash.com/random/1200x600/?cosmetology"
-                  unoptimized
-                  width={0}
-                  height={0}
-                  className="w-full h-auto rounded-2xl"
+                  src="/consultation-2.jpg"
+                  width={1000}
+                  height={1000}
+                  className="w-full h-full rounded-2xl"
                 />
                 <div className="absolute top-0 left-0 w-full">
                   <p className=" text-white text-lg md:text-5xl mx-[5%] mt-[5%] font-bold">
