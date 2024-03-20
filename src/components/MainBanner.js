@@ -1,6 +1,13 @@
 import Link from "next/link";
+import AppointmentPopupForm from "./AppointmentPopupForm";
+import React, { useState } from "react";
 
 const MainBanner = () => {
+  const [isAppointmentPopupOpen, setIsAppointmentPopupOpen] = useState(false);
+
+  const toggleAppointmentPopup = () => {
+    setIsAppointmentPopupOpen(!isAppointmentPopupOpen);
+  };
   return (
     <div className="relative">
       <div className="absolute top-0 left-0 right-0 bottom-0">
@@ -24,18 +31,24 @@ const MainBanner = () => {
           очарования. Примите себя новой.
         </h1>
         <div className="sm:ml-[6%] mt-[5%] lg:mt-[50px] md:mr-[30%] flex flex-col items-center sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <Link
-            href="#appointment"
+          <button
+            onClick={toggleAppointmentPopup}
             className="flex items-center justify-center px-6 py-6 bg-light-golden text-white rounded hover:bg-dark-golden transition duration-300 w-[60%] sm:w-auto"
           >
             Записаться на сеанс
-          </Link>
+          </button>
           <Link
             href="#hotdeals"
             className="flex items-center justify-center px-6 py-6 bg-rose-500 text-white rounded hover:bg-rose-600 transition duration-300 w-[60%] sm:w-auto"
           >
             Горячие акции
           </Link>
+          {/* Appointment Popup Form */}
+
+          <AppointmentPopupForm
+            onClose={toggleAppointmentPopup}
+            isPopupOpen={isAppointmentPopupOpen}
+          />
         </div>
       </div>
     </div>
