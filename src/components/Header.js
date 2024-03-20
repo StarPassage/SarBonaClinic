@@ -1,8 +1,10 @@
 import Link from "next/link";
 import HeaderMenu from "./HeaderMenu";
 import { useState, useEffect } from "react";
+import { useAppointmentForm } from "../providers/AppointmentPopupFormContext";
 
 const Header = () => {
+  const { openPopup } = useAppointmentForm();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [hoverState, setHoverState] = useState({
@@ -189,12 +191,12 @@ const Header = () => {
           </nav>
         </div>
         <div className="hidden lg:flex">
-          <Link
-            href="#appointment"
+          <button
+            onClick={openPopup}
             className="px-4 py-4 bg-light-golden text-white rounded hover:bg-dark-golden transition duration-300"
           >
             Записаться на сеанс
-          </Link>
+          </button>
         </div>
         <HeaderMenu
           menuContent={ServicesMenuContent}

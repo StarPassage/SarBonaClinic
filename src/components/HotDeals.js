@@ -8,8 +8,10 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
+import { useAppointmentForm } from "../providers/AppointmentPopupFormContext";
 
 const HotDeals = () => {
+  const { openPopup } = useAppointmentForm();
   return (
     <div className="bg-white" id="hotdeals">
       <h1 className="text-5xl md:text-5xl lg:text-6xl text-slate-700 text-left ml-[6%] mr-[4%] lg:mr-[52%] pt-[0.5em] pb-[2%] md:pb-0">
@@ -39,12 +41,12 @@ const HotDeals = () => {
                   <p className="text-white md:text-3xl mx-[5%] mt-[2%]">
                     Акции на всю весну
                   </p>
-                  <Link
-                    href="#appointment"
+                  <button
+                    onClick={openPopup}
                     className="mt-[5%] mx-[5%] inline-block bg-light-golden text-white rounded px-2 py-4 md:px-6 md:py-6 hover:bg-dark-golden transition duration-300"
                   >
                     Записаться на сеанс
-                  </Link>
+                  </button>
                 </div>
               </div>
             </CarouselItem>
@@ -65,12 +67,12 @@ const HotDeals = () => {
                     Консультация бесплатна при проведении косметологических
                     процедур в день приема
                   </p>
-                  <Link
-                    href="#appointment"
+                  <button
+                    onClick={openPopup}
                     className="mt-[5%] mx-[5%] inline-block bg-light-golden text-white text-base rounded px-2 py-4 md:px-6 md:py-6 hover:bg-dark-golden transition duration-300"
                   >
                     Записаться на сеанс
-                  </Link>
+                  </button>
                 </div>
               </div>
             </CarouselItem>

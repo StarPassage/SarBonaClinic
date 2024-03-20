@@ -11,7 +11,7 @@ const SubHeader = () => {
           >
             <img
               src="/address-pin.svg"
-              className="h-[2.8vw] sm:h-4 w-auto sm:mr-1"
+              className="h-[2.8vw] sm:h-4 w-auto mr-1"
             />
             г. Саратов, ул. Рахова, д. 61/71, пом. 1
           </Link>
@@ -33,7 +33,7 @@ const SubHeader = () => {
           </Link>
           <Link
             href="tel:+79873577080"
-            className="hidden md:flex items-center hover:text-dark-golden transition duration-300"
+            className="hidden lg:flex items-center hover:text-dark-golden transition duration-300"
           >
             <img src="/phone.svg" className="h-[2.8vw] sm:h-4 w-auto mr-1" />
             +7 (987) 357-70-80

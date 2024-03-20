@@ -3,8 +3,10 @@ import Link from "next/link";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { useAppointmentForm } from "../providers/AppointmentPopupFormContext";
 
-const AppointmentPopupForm = ({ onClose, isPopupOpen }) => {
+const AppointmentPopupForm = () => {
+  const { isPopupOpen, closePopup } = useAppointmentForm();
   const schema = z.object({
     name: z.string().min(1, "Необходимо ввести имя"),
     phoneNumber: z
@@ -97,13 +99,13 @@ const AppointmentPopupForm = ({ onClose, isPopupOpen }) => {
 
   return (
     <div
-      className={`fixed end-0 top-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex justify-center items-center transition-opacity duration-300 ${
+      className={`fixed end-0 top-0 bg-gray-600 bg-opacity-50 p-4 overflow-y-auto h-full w-full flex justify-center items-center transition-opacity duration-300 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="bg-white p-8 rounded-lg shadow-lg relative">
+      <div className="bg-extra-light-golden p-8 rounded-lg shadow-lg relative">
         <button
-          onClick={onClose}
+          onClick={closePopup}
           type="button"
           className="absolute top-0 right-0 m-4 transition-colors duration-300 hover:text-gray-500 transition-transform duration-300 transform hover:scale-110"
         >
@@ -220,10 +222,10 @@ const AppointmentPopupForm = ({ onClose, isPopupOpen }) => {
           </div>
 
           {/* Submission buttons */}
-          <div className="flex justify-end">
+          <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-rose-500 text-white w-1/2 font-bold py-4 px-4 rounded transition-colors duration-300 hover:bg-rose-600 transition-transform duration-300 transform hover:scale-110"
             >
               Записаться
             </button>
