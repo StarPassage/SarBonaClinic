@@ -64,17 +64,19 @@ const AppointmentPopupForm = () => {
   }, []);
 
   useEffect(() => {
-    const extractCountryCode = (phoneNumber) => {
-      return countryCodes.find((country) =>
-        phoneNumber.startsWith(country.dial_code)
-      );
-    };
+    if (!isDropdownOpen) {
+      const extractCountryCode = (phoneNumber) => {
+        return countryCodes.find((country) =>
+          phoneNumber.startsWith(country.dial_code)
+        );
+      };
 
-    const matchedCountry = extractCountryCode(watchedPhoneNumber);
-    if (matchedCountry) {
-      setSelectedCountry(matchedCountry);
+      const matchedCountry = extractCountryCode(watchedPhoneNumber);
+      if (matchedCountry) {
+        setSelectedCountry(matchedCountry);
+      }
     }
-  }, [watchedPhoneNumber, countryCodes]);
+  }, [watchedPhoneNumber, countryCodes, isDropdownOpen]);
 
   const onSubmit = (data) => {
     console.log(data);
