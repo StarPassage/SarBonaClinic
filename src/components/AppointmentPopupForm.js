@@ -68,15 +68,20 @@ const AppointmentPopupForm = () => {
 
   useEffect(() => {
     const extractCountryCode = (phoneNumber) => {
+      if (phoneNumber.startsWith("+76")) {
+        return {
+          name: "Kazakhstan",
+          dial_code: "+76",
+          code: "KZ",
+        };
+      }
       return sortedCountryCodes.find((country) =>
         phoneNumber.startsWith(country.dial_code)
       );
     };
 
     const matchedCountry = extractCountryCode(watchedPhoneNumber);
-    if (matchedCountry) {
-      setSelectedCountry(matchedCountry);
-    }
+    if (matchedCountry) setSelectedCountry(matchedCountry);
   }, [watchedPhoneNumber, countryCodes, isDropdownOpen]);
 
   const onSubmit = (data) => {
@@ -250,10 +255,10 @@ const AppointmentPopupForm = () => {
             <p className="text-red-600">{errors.phoneNumber?.message}</p>
             <div
               ref={dropdownRef}
-              className={`absolute w-[80%] mt-1 border border-gray-300 bg-white z-10 max-h-60 overflow-y-auto transition ease-out duration-100 ${
+              className={`absolute w-[80%] mt-1 border border-gray-300 rounded bg-white z-10 max-h-60 overflow-y-auto transition ease-out duration-200 ${
                 isDropdownOpen
                   ? "opacity-100 scale-100 pointer-events-auto"
-                  : "opacity-0 scale-60 pointer-events-none"
+                  : "opacity-0 scale-50 pointer-events-none"
               }`}
             >
               <div className="flex items-center border-b border-gray-300">
@@ -287,7 +292,11 @@ const AppointmentPopupForm = () => {
                     <span className="mr-2 overflow-hidden whitespace-nowrap overflow-ellipsis">
                       {country.name}
                     </span>
-                    <span className="mr-2">({country.dial_code})</span>
+                    <span className="mr-2">
+                      {country.name === "Казахстан"
+                        ? "(+76/+77)"
+                        : `(${country.dial_code})`}
+                    </span>
                     {selectedCountry.code === country.code && (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

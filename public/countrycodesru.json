@@ -435,11 +435,6 @@
     "code": "CM"
   },
   {
-    "name": "Канада",
-    "dial_code": "+1",
-    "code": "CA"
-  },
-  {
     "name": "Катар",
     "dial_code": "+974",
     "code": "QA"
@@ -830,7 +825,7 @@
     "code": "RO"
   },
   {
-    "name": "США",
+    "name": "США и Канада",
     "dial_code": "+1",
     "code": "US"
   },
