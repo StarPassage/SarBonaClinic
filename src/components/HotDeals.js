@@ -13,7 +13,7 @@ import { useAppointmentForm } from "../providers/AppointmentPopupFormContext";
 const HotDeals = () => {
   const { openPopup } = useAppointmentForm();
   return (
-    <div className="bg-white" id="hotdeals">
+    <div className="bg-white lg:p-10" id="hotdeals">
       <h1 className="text-5xl md:text-5xl lg:text-6xl text-slate-700 text-left ml-[6%] mr-[4%] lg:mr-[52%] pt-[0.5em] pb-[2%] md:pb-0">
         Акции
       </h1>
@@ -28,7 +28,7 @@ const HotDeals = () => {
             <CarouselItem>
               <div className="relative">
                 <Image
-                  src="https://source.unsplash.com/random/1200x600/?autumn+beauty"
+                  src="https://source.unsplash.com/random/1200x700/?autumn+beauty"
                   unoptimized
                   width={0}
                   height={0}
@@ -80,7 +80,7 @@ const HotDeals = () => {
           <CarouselNext />
         </Carousel>
       </div>
-      <div className="mt-[3em] mx-[6%]">
+      <div className="mt-[3em] mx-[4%]">
         <Separator />
       </div>
     </div>

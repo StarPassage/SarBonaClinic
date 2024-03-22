@@ -12,6 +12,7 @@ const AppointmentPopupForm = () => {
     phoneNumber: z
       .string()
       .min(12, "Номер телефона слишком короткий")
+      .max(15, "Номер телефона слишком длинный")
       .refine(
         (phoneNumber) => {
           // Check if the phone number starts with any of the country codes
