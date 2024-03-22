@@ -7,6 +7,7 @@ import AppointmentPopupForm from "../components/AppointmentPopupForm";
 import { AppointmentFormProvider } from "../providers/AppointmentPopupFormContext";
 import ServicesList from "@/components/ServicesList";
 import HotDeals from "@/components/HotDeals";
+import ReviewsSection from "@/components/ReviewsSection";
 import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,6 +21,7 @@ export default function Home() {
         <MainBanner />
         <ServicesList />
         <HotDeals />
+        <ReviewsSection />
         <AppointmentPopupForm />
         <Footer />
       </div>
