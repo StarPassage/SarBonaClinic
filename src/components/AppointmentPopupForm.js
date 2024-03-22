@@ -153,7 +153,7 @@ const AppointmentPopupForm = () => {
 
   return (
     <div
-      className={`fixed end-0 top-0 bg-gray-600 bg-opacity-50 p-4 overflow-y-auto h-full w-full flex justify-center items-center transition-opacity duration-300 ${
+      className={`fixed end-0 top-0 bg-gray-600 bg-opacity-50 p-4 overflow-y-auto h-full w-full z-[99] flex justify-center items-center transition-opacity duration-300 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
