@@ -6,7 +6,7 @@ const SubHeader = () => {
       <div className="flex justify-between items-center text-[2.5vw] sm:text-sm md:px-[40px] xl:px-[125px] py-1">
         <div className="flex items-center">
           <Link
-            href="/"
+            href="https://yandex.ru/maps/-/CDRMbNK9"
             className="flex items-center hover:text-dark-golden transition duration-300 mr-4"
           >
             <img

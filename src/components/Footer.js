@@ -30,9 +30,12 @@ const Footer = () => {
               Адрес:
             </h1>
           </div>
-          <h1 className="text-base lg:text-lg lg:text-xl md:mt-2 text-slate-500">
-            г. Саратов, ул. им. Рахова В.Г., д. 61/71, помещение 1.
-          </h1>
+          <Link href="https://yandex.ru/maps/-/CDRMbNK9">
+            <h1 className="text-base lg:text-lg lg:text-xl md:mt-2 text-slate-500  transition-colors duration-300 hover:text-light-golden">
+              г. Саратов, ул. им. Рахова В.Г., д. 61/71, помещение 1.
+            </h1>
+          </Link>
+
           <div>
             <div className="flex items-center mt-1 md:mt-2">
               <svg
