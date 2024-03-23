@@ -149,7 +149,7 @@ const Header = () => {
               </li>
               <li className="group relative">
                 <a
-                  href="#deals"
+                  href="#hotdeals"
                   className="transition-colors duration-300 hover:text-light-golden flex items-center px-5 py-5 text-3xl md:text-base"
                 >
                   Акции
@@ -175,6 +175,7 @@ const Header = () => {
                 <a
                   href="#reviews"
                   className="transition-colors duration-300 hover:text-light-golden flex items-center px-5 py-5 text-3xl md:text-base"
+                  onClick={isMobileMenuOpen ? toggleMobileMenu : undefined}
                 >
                   Отзывы
                 </a>
