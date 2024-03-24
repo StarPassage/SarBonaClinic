@@ -6,7 +6,7 @@ import MainBanner from "../components/MainBanner";
 import AppointmentPopupForm from "../components/AppointmentPopupForm";
 import { AppointmentFormProvider } from "../providers/AppointmentPopupFormContext";
 import ServicesList from "@/components/ServicesList";
-import HotDeals from "@/components/HotDeals";
+import HotDealsCarousel from "@/components/HotDealsCarousel";
 import ReviewsSection from "@/components/ReviewsSection";
 import Footer from "@/components/Footer";
 
@@ -20,7 +20,7 @@ export default function Home() {
         <Header />
         <MainBanner />
         <ServicesList />
-        <HotDeals />
+        <HotDealsCarousel />
         <ReviewsSection />
         <AppointmentPopupForm />
         <Footer />

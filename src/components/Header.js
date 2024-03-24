@@ -39,22 +39,22 @@ const Header = () => {
   const ServicesMenuContent = {
     linkHref: "#services",
     linkName: "Услуги",
-    defaultCategory: "Категория 1",
+    defaultCategory: "Косметология",
     categories: {
-      "Категория 1": [
+      Косметология: [
         "Услуга 1.1",
         "Услуга 1.2",
         "Услуга 1.3",
         "Услуга 1.4",
         "Услуга 1.5",
       ],
-      "Категория 2": ["Услуга 2.1", "Услуга 2.2"],
-      "Категория 3": ["Услуга 3.1", "Услуга 3.2"],
+      "Маникюр и педикюр": ["Услуга 2.1", "Услуга 2.2"],
+      "Парикмахерские услуги": ["Услуга 3.1", "Услуга 3.2"],
     },
   };
 
   return (
-    <header className="sticky top-[24px] bg-white text-slate-700 md:py-4 z-[99]">
+    <header className="sticky top-[22px] bg-white text-slate-700 md:py-4 z-[99]">
       <div className="container mx-auto flex flex-wrap justify-between items-center p-4 md:p-0">
         <Link href="/">
           <img

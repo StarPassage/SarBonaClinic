@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 
 const Review = ({ stars, name, text }) => {
   return (
-    <div className="p-4 max-w-[300px] h-full overflow-hidden">
+    <div className="p-4 max-w-[250px] md:max-w-[300px] h-full overflow-hidden">
       <div className="flex items-center mb-1">
         {/* Render stars based on rating */}
         {[...Array(5)].map((_, index) => (
@@ -74,9 +74,11 @@ const ReviewsSection = () => {
     if (index === activeIndex) {
       style += "scale-100 opacity-100 z-30 "; // Active review
     } else if (index === (activeIndex - 1 + reviews.length) % reviews.length) {
-      style += "scale-90 opacity-0 md:opacity-50 blur -translate-x-[20vw] z-20"; // Previous review
+      style +=
+        "scale-90 opacity-0 md:opacity-50 blur -translate-x-full md:-translate-x-[20vw] z-20"; // Previous review
     } else if (index === (activeIndex + 1) % reviews.length) {
-      style += "scale-90 opacity-0 md:opacity-50 blur translate-x-[20vw] z-20"; // Next review
+      style +=
+        "hidden md:block scale-90 opacity-0 opacity-50 blur translate-x-[20vw] z-20"; // Next review
     } else {
       style += "scale-80 opacity-0 "; // Other reviews
     }
@@ -88,7 +90,7 @@ const ReviewsSection = () => {
       <h1 className="text-5xl md:text-5xl lg:text-6xl text-slate-700 text-left ml-[6%] mr-[4%] lg:mr-[52%] pt-[0.5em] pb-[2%] md:pb-0">
         Отзывы
       </h1>
-      <div className="flex justify-center items-center overflow-hidden my-[10vh]">
+      <div className="flex justify-center items-center overflow-hidden my-[10vh] max-w-[100%]">
         {reviews.map((review, index) => (
           <div key={index} className={`absolute ${getReviewStyle(index)}`}>
             <Review
