@@ -2,8 +2,11 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="bg-white pb-10 scroll-mt-[10vh]" id="contacts">
-      <h1 className="text-5xl md:text-5xl lg:text-6xl text-slate-700 text-left ml-[6%] mr-[4%] lg:mr-[52%] pt-[0.5em]">
+    <div
+      className="bg-white pb-10 px-[10vw] lg:px-10 scroll-mt-[10vh]"
+      id="contacts"
+    >
+      <h1 className="text-3xl md:text-3xl lg:text-5xl text-slate-700 text-left ml-[6%] mr-[4%] lg:mr-[52%] pt-[0.5em]">
         Контакты
       </h1>
       <div className="md:flex md:justify-between ml-[6%] mr-[8%] pt-[1em] md:pt-[5em]">

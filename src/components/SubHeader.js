@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const SubHeader = () => {
   return (
-    <header className="sticky top-0 bg-white z-[99]">
+    <header className="hidden sm:block sticky top-0 bg-white z-[99]">
       <div className="flex justify-between items-center text-[2.5vw] sm:text-sm md:px-[40px] xl:px-[125px] py-1">
         <div className="flex items-center">
           <Link

@@ -18,11 +18,11 @@ const MainBanner = () => {
           className="absolute top-0 right-0 lg:w-full h-full object-cover"
         />
       </div>
-      <div className="relative h-[75vh] md:h-[70vh]">
-        <h1 className="text-5xl md:text-5xl lg:text-6xl text-slate-700 text-left ml-[6%] mr-[4%] lg:mr-[52%] pt-[6%] font-bold">
+      <div className="relative h-[500px] sm:h-[400px] md:h-[600px] lg:h-[550px] xl:h-[650px]">
+        <h1 className="text-2xl sm:text-5xl md:text-5xl lg:text-6xl text-slate-700 text-left ml-[6%] mr-[4%] xl:mr-[52%] pt-[6%] font-bold">
           Откройте для себя свою истинную красоту
         </h1>
-        <h1 className="text-lg md:text-xl lg:text-xl text-slate-700 text-left ml-[6%] mr-[4%] md:mr-[55%] pt-[5%]">
+        <h1 className="text-base sm:text-lg md:text-xl lg:text-xl text-slate-700 text-left ml-[6%] mr-[4%] md:mr-[55%] pt-[5%] pb-[1vh] sm:pb-0">
           Ознакомьтесь с ассортиментом процедур премиум-класса в клинике
           SarBona, разработанных специально для усиления вашего естественного
           очарования. Примите себя новой.
@@ -30,13 +30,13 @@ const MainBanner = () => {
         <div className="sm:ml-[6%] mt-[5%] lg:mt-[50px] md:mr-[30%] flex flex-col items-center sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
           <button
             onClick={openPopup}
-            className="flex items-center justify-center px-6 py-6 bg-light-golden text-white rounded hover:bg-dark-golden transition duration-300 w-[60%] sm:w-auto"
+            className="flex items-center justify-center px-4 py-4 md:px-6 md:py-6 bg-light-golden text-white rounded hover:bg-dark-golden transition duration-300 w-[60%] sm:w-auto"
           >
             Записаться на сеанс
           </button>
           <Link
             href="#hotdeals"
-            className="flex items-center justify-center px-6 py-6 bg-rose-500 text-white rounded hover:bg-rose-600 transition duration-300 w-[60%] sm:w-auto"
+            className="flex items-center justify-center px-4 py-4 md:px-6 md:py-6 bg-rose-500 text-white rounded hover:bg-rose-600 transition duration-300 w-[60%] sm:w-auto"
           >
             Горячие акции
           </Link>
